@@ -37,7 +37,9 @@ var solutions = new Dictionary<int, CodingProblem>()
 {
     {1, new ThreeSum()},
     {2, new ThreeSumClosest()},
+    {3, new FourSum()},
 };
+
 string savedMenu = "";
 
 var input = GetMenuInput();
