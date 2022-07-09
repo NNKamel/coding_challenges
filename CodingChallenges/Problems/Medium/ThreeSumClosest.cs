@@ -31,7 +31,7 @@ using u = Utils.Methods;
 
 namespace Problems
 {
-    public class ThreeSumClosest : CodingProblem
+    public class ThreeSumClosest : CodingProblem<int[], int> // where T : [] where G : List<int>
     {
         internal override void AssignOtherInputs()
         {
@@ -58,7 +58,7 @@ namespace Problems
 
         internal override void FillCorrectResults()
         {
-            this.correctResults = new List<object>()
+            this.correctResults = new List<int>()
             {
                 // 2, 0, -2
                  -2
@@ -76,7 +76,7 @@ namespace Problems
         //     // }
         // }
 
-        internal override object psolve(int[] arr, string secondary)
+        internal override int psolve(int[] arr, string secondary)
         {
             return ThreeSumClosestAnswer(arr, Int32.Parse(secondary));
         }

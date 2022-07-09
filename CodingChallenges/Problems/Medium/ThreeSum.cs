@@ -31,7 +31,7 @@ using u = Utils.Methods;
 
 namespace Problems
 {
-    public class ThreeSum : CodingProblem
+    public class ThreeSum : CodingProblem<int[], List<List<int>>>
     {
         internal override void AssignOtherInputs()
         {
@@ -54,7 +54,7 @@ namespace Problems
 
         internal override void FillCorrectResults()
         {
-            this.correctResults = new List<object>()
+            this.correctResults = new List<List<List<int>>>()
             {
                 new List<List<int>>()
                 {
@@ -77,7 +77,7 @@ namespace Problems
         //         ThreeSumAnswer(input);
         //     }
         // }
-        internal override object psolve(int[] arr, string secondary)
+        internal override List<List<int>> psolve(int[] arr, string secondary)
         {
             return ThreeSumAnswer(arr);
         }

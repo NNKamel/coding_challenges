@@ -33,7 +33,7 @@ using u = Utils.Methods;
 
 namespace Problems
 {
-    public class FourSum : CodingProblem
+    public class FourSum : CodingProblem<int[], List<IList<int>>>
     {
         internal override void AssignOtherInputs()
         {
@@ -59,7 +59,7 @@ namespace Problems
 
         internal override void FillCorrectResults()
         {
-            this.correctResults = new List<object>()
+            this.correctResults = new List<List<IList<int>>>()
             {
                 new List<IList<int>>()
                 {
@@ -82,9 +82,9 @@ namespace Problems
             };
         }
 
-        internal override object psolve(int[] arr, string secondary)
+        internal override List<IList<int>> psolve(int[] inputs, string secondary)
         {
-            return FourSumAnswer2(arr, Int32.Parse(secondary));
+            return FourSumAnswer2(inputs, Int32.Parse(secondary));
         }
 
         private IList<IList<int>> FourSumAnswer(int[] arr, int target)
@@ -140,7 +140,7 @@ namespace Problems
             return results;
         }
 
-        private IList<IList<int>> FourSumAnswer2(int[] arr, int target)
+        private List<IList<int>> FourSumAnswer2(int[] arr, int target)
         {
             StartMergeSort(arr);
             return kSum(4, arr, 0, target);

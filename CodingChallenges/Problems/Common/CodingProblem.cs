@@ -1,11 +1,11 @@
 namespace Problems.Common
 {
     using u = Utils.Methods;
-    public abstract class CodingProblem
+    public abstract class CodingProblem<T, G>
     {
-        public List<int[]> inputs;
+        public List<T> inputs;
         public string otherInputs;
-        public List<object> correctResults;
+        public List<G> correctResults;
         public string problemName;
 
         public CodingProblem()
@@ -71,6 +71,6 @@ namespace Problems.Common
             }
         }
 
-        internal abstract object psolve(int[] arr, string secondary);
+        internal abstract G psolve(T inputs, string secondary);
     }
 }

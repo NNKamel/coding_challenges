@@ -33,11 +33,12 @@ using System.Text;
 // var y = ThreeSumAnswer(arr5);
 // y.Dump("ThreeSumAnswer");
 
-var solutions = new Dictionary<int, CodingProblem>()
+var solutions = new Dictionary<int, dynamic>()
 {
-    {1, new ThreeSum()},
+    {1, (CodingProblem<int[], List<List<int>>>)new ThreeSum()},
     {2, new ThreeSumClosest()},
     {3, new FourSum()},
+    {4, new FourSumII()},
 };
 
 string savedMenu = "";
@@ -56,7 +57,7 @@ int GetMenuInput()
     return Int32.Parse(Console.ReadLine());
 }
 
-string GetMenuOptions(Dictionary<int, CodingProblem> options)
+string GetMenuOptions(Dictionary<int, dynamic> options)
 {
     if (string.IsNullOrEmpty(savedMenu))
     {
