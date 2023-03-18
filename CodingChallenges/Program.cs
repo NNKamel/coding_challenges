@@ -35,10 +35,16 @@ using System.Text;
 
 var solutions = new Dictionary<int, dynamic>()
 {
-    {1, (CodingProblem<int[], List<List<int>>>)new ThreeSum()},
+    {1, new ThreeSum()},
     {2, new ThreeSumClosest()},
     {3, new FourSum()},
     {4, new FourSumII()},
+    {5, new CountQuadruplets()},
+    {6, new AddTwoNumbers()},
+    {7, new TwoSum()},
+    {8, new TwoSumSorted()},
+    {9, new LongestNonRepeatingString()},
+
 };
 
 string savedMenu = "";

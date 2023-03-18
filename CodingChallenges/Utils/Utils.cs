@@ -28,7 +28,7 @@ namespace Utils
             Console.WriteLine(s);
         }
 
-        public static string ToPrettyString(object value)
+        public static string ToPrettyString(dynamic value)
         {
             return JsonConvert.SerializeObject(value, Formatting.Indented);
         }
