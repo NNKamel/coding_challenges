@@ -1,7 +1,9 @@
 namespace Utils
 {
+    using CodingChallenges.Problems.Common;
     using LINQPad;
     using Newtonsoft.Json;
+    using System.Diagnostics;
 
     class Methods
     {
@@ -20,12 +22,14 @@ namespace Utils
                 s += $"{ele} | ";
             }
             // s+="\n";
-            Console.WriteLine(s);
+            ScreenOutput.AddLine(s);
+            Debug.WriteLine(s);
         }
 
         public static void print(string s)
         {
-            Console.WriteLine(s);
+            ScreenOutput.AddLine(s);
+            Debug.WriteLine(s);
         }
 
         public static string ToPrettyString(dynamic value)
@@ -35,8 +39,12 @@ namespace Utils
 
         public static T d<T>(T value, string name)
         {
-            Console.WriteLine($"== {name} ==");
-            Console.WriteLine(ToPrettyString(value) + "\n== ==");
+            ArgumentNullException.ThrowIfNull(value);
+            ScreenOutput.AddLine($"== {name} ==");
+            Debug.WriteLine($"== {name} ==");
+            ScreenOutput.AddLine(ToPrettyString(value));
+            ScreenOutput.AddLine("\n== ==");
+            Debug.WriteLine(ToPrettyString(value) + "\n== ==");
             return value;
         }
     }

@@ -108,7 +108,7 @@ namespace Problems
             // when current letter is found, move start pointer after first occurrance of repeated letter
             // maxLength is set each loop, if it is less than difference between 2 pointers
 
-            for (int i = 0, j = 0; i < size && j < size; i++)
+            for (int i = 0, j = 1; i < size && j < size; i++)
             {
                 u.print("before j: " + j + " i: " + i + " s[i]: " + s[i]);
                 if (cachedNums.ContainsKey(s[i]))

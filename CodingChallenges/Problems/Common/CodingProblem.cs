@@ -1,5 +1,6 @@
 namespace Problems.Common
 {
+    using CodingChallenges.Problems.Common;
     using u = Utils.Methods;
     public abstract class CodingProblem<T, G>
     {
@@ -27,6 +28,7 @@ namespace Problems.Common
         public virtual void Solve()
         {
             Console.WriteLine($"starting solve: {problemName}");
+            ScreenOutput.AddLine($"starting solve: {problemName}");
             if (!string.IsNullOrEmpty(this.otherInputs))
             {
                 var targets = this.otherInputs.Split(",");
@@ -47,6 +49,7 @@ namespace Problems.Common
                     {
                         u.print("#### INCORRECT ####");
                     }
+                    ScreenOutput.NewResult();
                 }
             }
             else
@@ -67,6 +70,7 @@ namespace Problems.Common
                     {
                         u.print("#### INCORRECT ####");
                     }
+                    ScreenOutput.NewResult();
                 }
             }
         }
